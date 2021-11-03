@@ -10,8 +10,9 @@ RUN apk add --no-cache python3 \
     libc-dev \
     ca-certificates \
     python3-dev \
+	python3-pip \
     && update-ca-certificates
 
-RUN pip3 install --upgrade pip
-RUN pip3 install git+https://github.com/ircama/ELM327-emulator
-RUN pip3 install --upgrade git+https://github.com/brendan-w/python-OBD.git
+RUN python3 -m pip install --upgrade pip
+RUN python3 -m pip install git+https://github.com/ircama/ELM327-emulator
+RUN python3 -m pip install --upgrade git+https://github.com/brendan-w/python-OBD.git
